@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Pressable } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { Link } from 'expo-router';
 
 const AppointmentDetail = () => {
   const route: any = useRoute();
@@ -66,13 +67,16 @@ const AppointmentDetail = () => {
         <Text style={styles.value}>{appointment.notes}</Text>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => alert('Reschedule appointment')}>
+      <Pressable style={styles.button} onPress={() => alert('Reschedule appointment')}>
         <Text style={styles.buttonText}>Reschedule</Text>
-      </TouchableOpacity>
+      </Pressable>
 
-      <TouchableOpacity style={[styles.button, styles.cancelButton]} onPress={() => alert('Cancel appointment')}>
+      <Pressable style={[styles.button, styles.cancelButton]} onPress={() => alert('Cancel appointment')}>
         <Text style={styles.buttonText}>Cancel Appointment</Text>
-      </TouchableOpacity>
+      </Pressable>
+      <Link style={[styles.button, styles.joinButton]} href="/consult-chat-video">
+        <Text style={styles.buttonText}>Join Appointment</Text>
+      </Link>
     </ScrollView>
   );
 };
@@ -87,5 +91,6 @@ const styles = StyleSheet.create({
   value: { fontSize: 16, color: '#333' },
   button: { backgroundColor: '#007BFF', padding: 15, borderRadius: 8, alignItems: 'center', marginTop: 20 },
   cancelButton: { backgroundColor: '#FF3B30' },
+  joinButton: { backgroundColor: '#4CAF50', textAlign: "center" },
   buttonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });

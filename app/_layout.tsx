@@ -43,6 +43,7 @@ export default function RootLayout() {
         <Stack.Screen name="account-settings" options={{headerTitle: "Account"}} />
         <Stack.Screen name="payment-settings" options={{headerTitle: "Payments"}} />
         <Stack.Screen name="app-settings" options={{headerTitle: "App settings"}} />
+        <Stack.Screen name="consult-chat-video" options={{headerTitle: "Consult"}} />
         <Stack.Screen name="appointment-details[id]" options={{headerTitle: "Appointment details"}} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />

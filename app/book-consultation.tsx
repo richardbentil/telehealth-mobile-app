@@ -12,7 +12,7 @@ const BookConsultation = () => {
       setStatusBarStyle("dark");
     }, 0);
   }, []);
-  console.log(route)
+
   const { doctorId, doctorName } = route?.params || {};
 
   const [selectedService, setSelectedService] = useState('');
